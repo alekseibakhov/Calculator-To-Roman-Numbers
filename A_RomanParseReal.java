@@ -30,13 +30,13 @@ public class A_RomanParseReal {
 
     public static String arabicToRoman(int number) {
 
-        List<A_EnumRomans> romanNumerals = A_EnumRomans.getReverseSortedValues();
+        List<A_EnumRomans> list = A_EnumRomans.getReverseSortedValues();
 
         int i = 0;
         StringBuilder sb = new StringBuilder();
 
-        while ((number > 0) && (romanNumerals.size() > i )) {
-            A_EnumRomans currentSymbol = romanNumerals.get(i);
+        while ((number > 0) && (list.size() > i )) {
+            A_EnumRomans currentSymbol = list.get(i);
             if (currentSymbol.getValue() <= number) {
                 sb.append(currentSymbol.name());
                 number -= currentSymbol.getValue();
